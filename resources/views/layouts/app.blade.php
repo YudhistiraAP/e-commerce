@@ -12,11 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Tailwind Build -->
-        @php
-            $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
-        @endphp
-        <link rel="stylesheet" href="{{ asset('build/' . $manifest['resources/css/app.css']['file']) }}">
-        <script src="{{ asset('build/' . $manifest['resources/js/app.js']['file']) }}" defer></script>
+        <link rel="stylesheet" href="{{ Vite::asset('resources/css/app.css') }}">
+        <script type="module" src="{{ Vite::asset('resources/js/app.js') }}"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
